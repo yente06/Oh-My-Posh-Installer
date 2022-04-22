@@ -48,6 +48,10 @@ unzip -o ~/.poshthemes/themes.zip -d ~/.poshthemes
 chmod u+rw ~/.poshthemes/*.json
 rm ~/.poshthemes/themes.zip
 
+## Install font
+cp -a ./src/.fonts/. ~/.fonts/
+fc-cache -f -v
+
 ## Set colors
 export TERM=xterm-256color
 
@@ -66,6 +70,8 @@ echo 'eval "$(oh-my-posh init zsh --config ~/.poshthemes/default.omp.json)"' >> 
 
 if [ "$allUsers" = true ] ; 
     then
+        # Copying fonts to skel folder
+        sudo /bin/cp -rfa ./src/.fonts/. /etc/skel/.fonts/
         # Copying themes to skel folder
         sudo /bin/cp -rf ~/.poshthemes /etc/skel/.poshthemes
         if [[ ! -e /etc/skel/.bashrc ]]; then
