@@ -49,7 +49,8 @@ chmod u+rw ~/.poshthemes/*.json
 rm ~/.poshthemes/themes.zip
 
 ## Install font
-cp -a ./src/.fonts/. ~/.fonts/
+mkdir -p ~/.fonts/
+/bin/cp -rf ./src/Meslo\ LG\ M\ Regular\ Nerd\ Font\ Complete.ttf ~/.fonts/Meslo\ LG\ M\ Regular\ Nerd\ Font\ Complete.ttf
 fc-cache -f -v
 
 ## Set colors
@@ -96,3 +97,5 @@ else
    # assume something else
    echo "Unsupported shell type!"
 fi
+
+echo "If the terminal doesn't look right, select \"MesloLGM Nerd Font Regular\" as the terminal font."
